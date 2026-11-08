@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInfo;
 
 public abstract class BaseCalculatorTest {
+    protected static final double DELTA = 1e-9;
     protected Calculator calculator;
     protected final Logger logger = LogManager.getLogger(this.getClass());
 
