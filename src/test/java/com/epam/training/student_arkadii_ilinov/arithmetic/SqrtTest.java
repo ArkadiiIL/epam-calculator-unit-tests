@@ -6,7 +6,6 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SqrtTest extends BaseCalculatorTest {
 
@@ -30,7 +29,7 @@ public class SqrtTest extends BaseCalculatorTest {
     @ValueSource(doubles = {-1.0, -4.0, -0.25, Double.NEGATIVE_INFINITY})
     void shouldReturnNaNForNegativeNumber(double value) {
         double result = calculator.sqrt(value);
-        assertTrue(Double.isNaN(result), "Expected NaN, but was: " + result);
+        assertEquals(Double.NaN, result);
     }
 
     @ParameterizedTest(name = "sqrt({0}) = {1}")
